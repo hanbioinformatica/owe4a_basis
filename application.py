@@ -7,12 +7,11 @@ Author: Martijn van der Bruggen
 Voor deployment op Azure WebApps is het noodzakelijk het bestand
 de naam application.py te geven.
 """
-from flask import Flask, request
 import mysql.connector
-from Bio.Seq import Seq
-
+from flask import Flask, request
 
 app = Flask(__name__)
+
 
 @app.route('/')
 def index_fun():
@@ -23,6 +22,8 @@ def index_fun():
 Mogelijkheid om te zoeken naar een woord in de ensembl database
 Parameteroverdracht middels de get methode (default)
 """
+
+
 @app.route("/sql")
 def sqldemo():
     woord = request.args.get('woord')
@@ -46,6 +47,6 @@ def sqldemo():
     verbinding.close()
     return tekst
 
+
 if __name__ == '__main__':
     app.run()
-
