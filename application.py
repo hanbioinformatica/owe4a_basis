@@ -12,11 +12,12 @@ from flask import Flask, request, make_response, render_template
 app = Flask(__name__)
 
 
-@app.route('/',methods=['get','post'])
+@app.route('/', methods=['get', 'post'])
 def index_fun():
-    param_kleur =request.form.get("kleur")
-    resp  = make_response(render_template('mijnTemplate.html',kleur=param_kleur))
+    param_kleur = request.form.get("kleur")
+    resp = make_response(render_template('mijnTemplate.html', kleur=param_kleur))
     return resp
+
 
 if __name__ == '__main__':
     app.run()
