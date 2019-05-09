@@ -7,15 +7,16 @@ Author: Martijn van der Bruggen
 Voor deployment op Azure WebApps is het noodzakelijk het bestand
 de naam application.py te geven.
 """
-from flask import Flask, request
+from flask import Flask, request, make_response, render_template
 
 app = Flask(__name__)
 
 
-@app.route('/')
+@app.route('/',methods=['get','post'])
 def index_fun():
-    return 'Dit is de routing naar de root! Aanpassing!'
-
+    param_kleur =request.form.get("kleur")
+    resp  = make_response(render_template('mijnTemplate.html',kleur=param_kleur))
+    return resp
 
 if __name__ == '__main__':
     app.run()
