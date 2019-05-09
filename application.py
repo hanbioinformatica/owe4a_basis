@@ -14,7 +14,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index_fun():
-    return 'Dit is de routing naar de root'
+    return 'Dit is de routing naar de root! Aanpassing!'
 
 
 if __name__ == '__main__':
