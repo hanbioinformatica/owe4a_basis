@@ -3,6 +3,9 @@ Basis voor een te ontwikkelen Flask applicatie
 Creation: may 9, 2019
 (c) HAN University of Applied Science
 Author: Martijn van der Bruggen
+
+Voor deployment op Azure WebApps is het noodzakelijk het bestand
+de naam application.py te geven.
 """
 from flask import Flask, request
 import mysql.connector
